@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrodos — Soluciones Tecnológicas | Raúl González Chávez</title>
+<link rel="stylesheet" href="style.css">
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">ELECTR<span>O</span>DOS</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#portafolio">Proyectos</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="hero-bg" id="heroBg"></div>
+  <svg class="circuit-svg" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" style="opacity:0.18;">
+    <g stroke="#028090" stroke-width="1" fill="none">
+      <path d="M0 150 H120 V80 H300 V150 H420 V80 H600"/>
+      <path d="M0 400 H80 V320 H200 V400 H360 V300 H500 V400 H680"/>
+      <path d="M1400 200 H1280 V120 H1100 V200 H960 V130 H800"/>
+      <path d="M1400 550 H1300 V450 H1150 V550 H1000 V450 H820"/>
+      <path d="M300 800 V680 H420 V750 H560 V680 H700 V800"/>
+      <path d="M900 800 V700 H1020 V760 H1160 V700 H1280 V800"/>
+    </g>
+    <g fill="#02C39A">
+      <circle cx="120" cy="150" r="4"/><circle cx="300" cy="80" r="4"/>
+      <circle cx="420" cy="150" r="4"/><circle cx="200" cy="400" r="4"/>
+      <circle cx="360" cy="400" r="4"/><circle cx="500" cy="300" r="4"/>
+      <circle cx="1280" cy="200" r="4"/><circle cx="1100" cy="120" r="4"/>
+      <circle cx="1150" cy="450" r="4"/><circle cx="1000" cy="550" r="4"/>
+      <circle cx="420" cy="680" r="4"/><circle cx="560" cy="750" r="4"/>
+      <circle cx="1020" cy="760" r="4"/><circle cx="1160" cy="700" r="4"/>
+    </g>
+  </svg>
+  <div class="hero-content">
+    <div class="hero-badge">🏆 Campeón VIII Concurso Regional ITCJ</div>
+    <h1 class="hero-name">Raúl <span class="accent">González</span> Chávez</h1>
+    <p class="hero-company">ELECTRODOS · SOLUCIONES TECNOLÓGICAS</p>
+    <p class="hero-desc">Desarrollador Full-Stack y fundador de Electrodos. Transformamos ideas en sistemas reales: bases de datos, páginas web y software a la medida para tu negocio.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-primary">Hablar con nosotros</a>
+      <a href="#portafolio" class="btn-outline">Ver proyectos</a>
+    </div>
+  </div>
+  <div class="scroll-hint">scroll</div>
+</section>
+
+<!-- ABOUT -->
+<section id="nosotros">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="reveal-left">
+        <div class="about-avatar">RG</div>
+        <div class="section-label">Sobre nosotros</div>
+        <h2 class="section-title">Tecnología que <br>trabaja para ti</h2>
+        <div class="section-line"></div>
+        <div class="about-text">
+          <p>Soy <strong>Raúl González Chávez</strong>, estudiante de 5.° semestre del CBTIS 128 en Ciudad Juárez, Chihuahua, especializado en desarrollo de software y sistemas web.</p>
+          <p>Fundé <strong>Electrodos</strong> con una misión clara: llevar soluciones tecnológicas reales, modernas y accesibles a negocios de todos los tamaños. No vendemos plantillas — construimos lo que tú necesitas.</p>
+        </div>
+        <div class="trophy-badge">
+          <div class="trophy-icon">🏆</div>
+          <div class="trophy-text">
+            <strong>1.° Lugar — Programación</strong>
+            <span>VIII Concurso Regional de Ciencias y Tecnologías del ITCJ · 30 Mayo 2026</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-num">+10</div>
+            <div class="stat-label">Proyectos desarrollados</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Servicios clave</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">5°</div>
+            <div class="stat-label">Semestre CBTIS 128</div>
+          </div>
+        </div>
+        <div class="skills-wrap" style="margin-top: 2rem;">
+          <p style="color:var(--gray); font-size:0.85rem; letter-spacing:2px; margin-bottom:1.2rem;">HABILIDADES TÉCNICAS</p>
+          <div class="skill-item">
+            <div class="skill-header"><span>JavaScript / Node.js</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>PHP / HTML / CSS</span><span>88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>MySQL / MongoDB</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Python / C++</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Java</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicios">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Qué hacemos</div>
+      <h2 class="section-title">Nuestros servicios</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🗄️</div>
+        <h3>Bases de Datos</h3>
+        <p>Diseñamos, implementamos y optimizamos tu base de datos profesional. Migramos tus datos de Excel o papel a un sistema moderno sin perder nada.</p>
+        <div class="service-tags">
+          <span class="tag">MySQL</span><span class="tag">MongoDB</span>
+          <span class="tag">PostgreSQL</span><span class="tag">MariaDB</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🌐</div>
+        <h3>Páginas Web</h3>
+        <p>Sitios modernos, responsivos y funcionales. Desde páginas corporativas hasta tiendas en línea con catálogo, carrito y pagos integrados.</p>
+        <div class="service-tags">
+          <span class="tag">HTML/CSS</span><span class="tag">JavaScript</span>
+          <span class="tag">PHP</span><span class="tag">Node.js</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📦</div>
+        <h3>Sistema de Inventario</h3>
+        <p>Control total de tus productos, entradas y salidas en tiempo real. Alertas automáticas de stock bajo y exportación a Excel o PDF.</p>
+        <div class="service-tags">
+          <span class="tag">Web App</span><span class="tag">Reportes</span>
+          <span class="tag">Alertas</span><span class="tag">Multi-dispositivo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portafolio">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Trabajo reciente</div>
+      <h2 class="section-title">Proyectos</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="portfolio-grid">
+      <div class="project-card reveal">
+        <div class="project-thumb teal">🏥</div>
+        <div class="project-body">
+          <h3>Sistema de Gestión Hospitalaria</h3>
+          <p>Aplicación web full-stack para seguimiento de pacientes, médicos y consultas. Desarrollada con PHP, HTML y MySQL.</p>
+          <div class="service-tags" style="margin-bottom:1rem;">
+            <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">HTML</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-thumb blue">📦</div>
+        <div class="project-body">
+          <h3>App de Inventario y Eventos</h3>
+          <p>Sistema web para gestionar stock de productos, registros de clientes y programación de eventos, optimizando operaciones comerciales.</p>
+          <div class="service-tags" style="margin-bottom:1rem;">
+            <span class="tag">PHP</span><span class="tag">MySQL</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-thumb green">⚡</div>
+        <div class="project-body">
+          <h3>API Backend Escalable</h3>
+          <p>Servicios backend con Node.js y Express, con almacenamiento seguro en MongoDB Atlas. Arquitectura moderna y eficiente.</p>
+          <div class="service-tags" style="margin-bottom:1rem;">
+            <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-thumb teal">🏫</div>
+        <div class="project-body">
+          <h3>Página web CBTIS 128 — Ejemplo</h3>
+          <p>Ejemplo de proyecto web desarrollado para el CBTIS No. 128. Muestra del tipo de sitios que podemos crear para tu institución o negocio.</p>
+          <div class="service-tags" style="margin-bottom:1rem;">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+          </div>
+          <a href="https://kevingonzalez2305.github.io/proyecto-final-pag-web/" target="_blank" class="project-link">Ver ejemplo</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;" class="reveal">
+      <a href="https://github.com/kevingonzalez2305/proyectos" target="_blank" class="btn-outline">Ver todos en GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- CV -->
+<section id="cv">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Trayectoria</div>
+      <h2 class="section-title">Currículum</h2>
+      <div class="section-line"></div>
+      <a href="CV.pdf" download="CV_Raul_Gonzalez_Chavez.pdf" class="cv-download">⬇ Descargar CV completo (PDF)</a>
+      <a href="reconocimiento.pdf" target="_blank" class="cv-download">🏆 Ver reconocimiento ITCJ</a>
+    </div>
+    <div class="cv-grid">
+      <div>
+        <p style="font-size:0.75rem; letter-spacing:3px; color:var(--mint); margin-bottom:1.5rem;">EXPERIENCIA</p>
+        <div class="cv-timeline">
+          <div class="cv-item reveal">
+            <div class="cv-date">Ene 2026 – Presente</div>
+            <h3>Desarrollador Web — Proyectos Independientes</h3>
+            <div class="cv-org">Electrodos · Ciudad Juárez, Chih.</div>
+            <p>Desarrollo de sistemas hospitalarios, apps de inventario y APIs backend con PHP, Node.js, MySQL y MongoDB Atlas.</p>
+          </div>
+          <div class="cv-item reveal">
+            <div class="cv-date">Jun 2025 – Abr 2026</div>
+            <h3>Empleado del Mes</h3>
+            <div class="cv-org">Wendy's · Ciudad Juárez</div>
+            <p>Reconocido 3 veces como Empleado del Mes.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.75rem; letter-spacing:3px; color:var(--mint); margin-bottom:1.5rem;">EDUCACIÓN Y LOGROS</p>
+        <div class="cv-timeline">
+          <div class="cv-item reveal">
+            <div class="cv-date">Sep 2023 – Jun 2027</div>
+            <h3>Técnico en Programación</h3>
+            <div class="cv-org">CBTIS 128 · Ciudad Juárez</div>
+            <p>Especialidad técnica en desarrollo de software. Desempeño académico destacado con múltiples proyectos de gestión y sistemas web.</p>
+          </div>
+          <div class="cv-item reveal">
+            <div class="cv-date">30 Mayo 2026</div>
+            <h3>🏆 1.° Lugar — Programación</h3>
+            <div class="cv-org">VIII Concurso Regional de Ciencias y Tecnologías · ITCJ</div>
+            <p>Primer lugar representando al CBTIS No. 128. Primer Lugar Global en el 8° Concurso de Programación, realizado los días 29 y 30 de abril de 2026.</p>
+          </div>
+        </div>
+        <div style="margin-top:2rem;" class="reveal">
+          <p style="font-size:0.75rem; letter-spacing:3px; color:var(--mint); margin-bottom:1rem;">TECNOLOGÍAS</p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+            <span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">Node.js</span>
+            <span class="tag">Python</span><span class="tag">C++</span><span class="tag">Java</span>
+            <span class="tag">MySQL</span><span class="tag">MariaDB</span><span class="tag">MongoDB</span>
+            <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Express</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Hablemos</div>
+      <h2 class="section-title">Contáctanos</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-wrap">
+      <div class="reveal-left">
+        <p class="contact-info">¿Tienes un proyecto en mente? Escríbenos y cuéntanos tu idea — te responderemos sin compromiso y con soluciones concretas.</p>
+        <div class="contact-item">
+          <div class="contact-ico">📱</div>
+          <div>
+            <div style="font-size:0.75rem; color:var(--gray); margin-bottom:0.2rem;">WhatsApp</div>
+            <a href="https://wa.me/526567697333" target="_blank">656 769 7333</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ico">📧</div>
+          <div>
+            <div style="font-size:0.75rem; color:var(--gray); margin-bottom:0.2rem;">Email</div>
+            <a href="mailto:kevinraul581@gmail.com">kevinraul581@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ico">💻</div>
+          <div>
+            <div style="font-size:0.75rem; color:var(--gray); margin-bottom:0.2rem;">GitHub</div>
+            <a href="https://github.com/kevingonzalez2305/proyectos" target="_blank">kevingonzalez2305</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ico">📍</div>
+          <div>
+            <div style="font-size:0.75rem; color:var(--gray); margin-bottom:0.2rem;">Ubicación</div>
+            <span style="color:var(--gray);">Ciudad Juárez, Chihuahua</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="contact-form">
+          <div class="form-group">
+            <label>NOMBRE</label>
+            <input type="text" id="fname" placeholder="Tu nombre completo">
+          </div>
+          <div class="form-group">
+            <label>EMAIL</label>
+            <input type="email" id="femail" placeholder="tucorreo@ejemplo.com">
+          </div>
+          <div class="form-group">
+            <label>SERVICIO DE INTERÉS</label>
+            <select id="fservice">
+              <option value="">Selecciona un servicio…</option>
+              <option>Base de datos</option>
+              <option>Página web</option>
+              <option>Sistema de inventario</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>MENSAJE</label>
+            <textarea id="fmessage" placeholder="Cuéntanos tu idea o proyecto…"></textarea>
+          </div>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <button class="btn-primary" onclick="sendWhatsApp()" style="flex:1;">📱 WhatsApp</button>
+            <button class="btn-outline" id="emailBtn" onclick="sendEmailJS()" style="flex:1;">📧 Enviar Email</button>
+          </div>
+          <div class="form-status" id="formStatus"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Electrodos — Soluciones Tecnológicas</span> · Desarrollado por Raúl González Chávez</p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">Ciudad Juárez, Chihuahua · 656 769 7333 · kevinraul581@gmail.com</p>
+</footer>
+
+<script>
+  // ── EmailJS init ──────────────────────────────────────────
+  emailjs.init({ publicKey: 'lYom5Pd-NDynOmMsg' });
+
+  // ── Nav ───────────────────────────────────────────────────
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    nav.style.background = window.scrollY > 60 ? 'rgba(10,37,64,0.98)' : 'rgba(10,37,64,0.92)';
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // ── Reveal animation ──────────────────────────────────────
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // ── Skill bars ────────────────────────────────────────────
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.skill-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+        skillObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.skills-wrap').forEach(el => skillObserver.observe(el));
+
+  // ── Particles ─────────────────────────────────────────────
+  const heroBg = document.getElementById('heroBg');
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 5 + 2;
+    p.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;top:${Math.random()*100}%;animation-duration:${Math.random()*8+6}s;animation-delay:${Math.random()*4}s;opacity:${Math.random()*0.12+0.04};`;
+    heroBg.appendChild(p);
+  }
+
+  // ── Active nav link ───────────────────────────────────────
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? '#02C39A' : '';
+    });
+  });
+
+  // ── Form helpers ──────────────────────────────────────────
+  function getFormData() {
+    return {
+      name:    document.getElementById('fname').value.trim(),
+      email:   document.getElementById('femail').value.trim(),
+      service: document.getElementById('fservice').value,
+      message: document.getElementById('fmessage').value.trim(),
+      status:  document.getElementById('formStatus')
+    };
+  }
+  function clearForm() {
+    document.getElementById('fname').value = '';
+    document.getElementById('femail').value = '';
+    document.getElementById('fservice').value = '';
+    document.getElementById('fmessage').value = '';
+  }
+  function showStatus(status, type, msg) {
+    status.textContent = msg;
+    status.className = 'form-status ' + type;
+    status.style.display = 'block';
+  }
+
+  // ── WhatsApp ──────────────────────────────────────────────
+  function sendWhatsApp() {
+    const { name, email, service, message, status } = getFormData();
+    if (!name || !email || !message) { showStatus(status, 'error', 'Por favor completa nombre, email y mensaje.'); return; }
+    const text = `Hola, soy *${name}* (${email}).\n\n*Servicio:* ${service || 'No especificado'}\n\n*Mensaje:*\n${message}`;
+    window.open('https://wa.me/526567697333?text=' + encodeURIComponent(text), '_blank');
+    showStatus(status, 'success', '¡Abriendo WhatsApp!');
+    clearForm();
+  }
+
+  // ── EmailJS ───────────────────────────────────────────────
+  async function sendEmailJS() {
+    const { name, email, service, message, status } = getFormData();
+    if (!name || !email || !message) {
+      showStatus(status, 'error', 'Por favor completa nombre, email y mensaje.');
+      return;
+    }
+
+    const btn = document.getElementById('emailBtn');
+    btn.disabled = true;
+    btn.textContent = '⏳ Enviando…';
+    showStatus(status, '', '');
+    status.style.display = 'none';
+
+    try {
+      await emailjs.send('service_d1wgbkn', 'template_tvjwbgh', {
+        from_name:  name,
+        from_email: email,
+        service:    service || 'No especificado',
+        message:    message,
+        reply_to:   email
+      });
+
+      showStatus(status, 'success', '✅ ¡Mensaje enviado! Te responderemos pronto.');
+      clearForm();
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      showStatus(status, 'error', '❌ Error al enviar. Intenta por WhatsApp o escríbenos directamente.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '📧 Enviar Email';
+    }
+  }
+</script>
+</body>
+</html>
