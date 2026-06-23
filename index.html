@@ -363,6 +363,9 @@
 
 <script>
   // ── EmailJS init ──────────────────────────────────────────
+  if (window.location.hash) history.replaceState(null, '', window.location.pathname);
+  window.scrollTo(0, 0);
+
   emailjs.init('IYom5Pd-NDynOmMsg');
 
   // ── Nav ───────────────────────────────────────────────────
