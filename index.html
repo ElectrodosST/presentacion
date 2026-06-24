@@ -3,11 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Electrodos — Soluciones Tecnológicas | Kevin Raúl González Chávez</title>
+<title>Electrodos — Soluciones Tecnológicas</title>
 <link rel="stylesheet" href="style.css">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
+<!-- LOADER -->
+<style>
+#loader {
+  position: fixed; inset: 0; z-index: 99999;
+  background: #0A2540;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1.2rem;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+#loader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+.loader-logo {
+  display: flex; align-items: center;
+  font-size: clamp(2.8rem, 9vw, 5.5rem);
+  font-weight: 900; letter-spacing: -2px; line-height: 1;
+}
+.loader-letter {
+  display: inline-block;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(-80px);
+  animation: letterFall 0.45s cubic-bezier(.22,.61,.36,1) forwards;
+}
+.loader-letter.accent { color: #02C39A; }
+.loader-letter:nth-child(1)  { animation-delay: 0.00s; }
+.loader-letter:nth-child(2)  { animation-delay: 0.07s; }
+.loader-letter:nth-child(3)  { animation-delay: 0.14s; }
+.loader-letter:nth-child(4)  { animation-delay: 0.21s; }
+.loader-letter:nth-child(5)  { animation-delay: 0.28s; }
+.loader-letter:nth-child(6)  { animation-delay: 0.35s; }
+.loader-letter:nth-child(7)  { animation-delay: 0.42s; }
+.loader-letter:nth-child(8)  { animation-delay: 0.49s; }
+.loader-letter:nth-child(9)  { animation-delay: 0.56s; }
+.loader-letter:nth-child(10) { animation-delay: 0.63s; }
+
+@keyframes letterFall {
+  0%   { opacity: 0; transform: translateY(-80px); }
+  60%  { opacity: 1; transform: translateY(8px); }
+  80%  { transform: translateY(-4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.loader-sub {
+  font-size: 0.75rem; letter-spacing: 5px; color: #7ab8c8;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: subFadeIn 0.4s ease 0.9s forwards;
+}
+.loader-bar-wrap {
+  width: 160px; height: 2px;
+  background: rgba(2,128,144,0.2);
+  border-radius: 2px; overflow: hidden;
+  opacity: 0;
+  animation: subFadeIn 0.3s ease 0.9s forwards;
+}
+.loader-bar {
+  height: 100%; width: 0%;
+  background: linear-gradient(to right, #028090, #02C39A);
+  border-radius: 2px;
+  animation: barFill 1.1s ease 1s forwards;
+}
+@keyframes subFadeIn { to { opacity: 1; } }
+@keyframes barFill   { to { width: 100%; } }
+</style>
+
+<div id="loader">
+  <div class="loader-logo">
+    <span class="loader-letter">E</span>
+    <span class="loader-letter">L</span>
+    <span class="loader-letter">E</span>
+    <span class="loader-letter">C</span>
+    <span class="loader-letter">T</span>
+    <span class="loader-letter">R</span>
+    <span class="loader-letter accent">O</span>
+    <span class="loader-letter">D</span>
+    <span class="loader-letter">O</span>
+    <span class="loader-letter">S</span>
+  </div>
+  <div class="loader-sub">Soluciones Tecnológicas</div>
+  <div class="loader-bar-wrap">
+    <div class="loader-bar"></div>
+  </div>
+</div>
+
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.getElementById('loader').classList.add('hide');
+    setTimeout(function() {
+      document.getElementById('loader').style.display = 'none';
+    }, 800);
+  }, 2300);
+});
+</script>
+<!-- END LOADER -->
 
 <!-- NAV -->
 <nav id="navbar">
@@ -48,9 +146,9 @@
     </g>
   </svg>
   <div class="hero-content">
-    <h1 class="hero-name">Kevin Raúl <span class="accent">González</span> Chávez</h1>
-    <p class="hero-company">ELECTRODOS · SOLUCIONES TECNOLÓGICAS</p>
-    <p class="hero-desc">Desarrollador Full-Stack y fundador de Electrodos. Transformamos ideas en sistemas reales: bases de datos, páginas web y software a la medida para tu negocio.</p>
+    <h1 class="hero-name">ELECTR<span class="accent">O</span>DOS</h1>
+    <p class="hero-company">SOLUCIONES TECNOLÓGICAS</p>
+    <p class="hero-desc">Transformamos ideas en sistemas reales: bases de datos, páginas web y software a la medida para tu negocio.</p>
     <div class="hero-btns">
       <a href="#contacto" class="btn-primary">Hablar con nosotros</a>
       <a href="#portafolio" class="btn-outline">Ver proyectos</a>
@@ -310,7 +408,7 @@
           <div class="contact-ico">📧</div>
           <div>
             <div style="font-size:0.75rem; color:var(--gray); margin-bottom:0.2rem;">Email</div>
-            <a href="mailto:kevinraul581@gmail.com">kevinraul581@gmail.com</a>
+            <a href="mailto:elecctrodos@gmail.com">elecctrodos@gmail.com</a>
           </div>
         </div>
         <div class="contact-item">
@@ -366,8 +464,8 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 <span>Electrodos — Soluciones Tecnológicas</span> · Desarrollado por Kevin Raúl González Chávez</p>
-  <p style="margin-top:0.5rem; font-size:0.75rem;">Ciudad Juárez, Chihuahua · 656 769 7333 · kevinraul581@gmail.com</p>
+  <p>© 2026 <span>Electrodos — Soluciones Tecnológicas</span> · Desarrollado por Raúl</p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">Ciudad Juárez, Chihuahua · 656 769 7333 · elecctrodos@gmail.com</p>
 </footer>
 
 <!-- ── CHATBOT ─────────────────────────────────────────────────── -->
@@ -641,7 +739,7 @@ async function sendEmailJS() {
 const chatResponses = [
   {
     keys: ["hola","buenas","buenos","hi","hey","saludos","buen dia","buen día"],
-    reply: "¡Hola! Bienvenido a Electrodos — Soluciones Tecnológicas.\nSoy el asistente virtual de Kevin. ¿En qué puedo ayudarte?",
+    reply: "¡Hola! Bienvenido a Electrodos — Soluciones Tecnológicas.\nSoy el asistente virtual de Electrodos. ¿En qué puedo ayudarte?",
     sugs: ["¿Qué servicios ofrecen?","¿Cuánto cuesta una página?","¿Cómo los contacto?"]
   },
   {
@@ -657,7 +755,7 @@ const chatResponses = [
   {
     keys: ["pagina","página","web","sitio"],
     reply: "Desarrollamos páginas web modernas y responsivas:\n\n• Básica (1-3 secciones) — desde $500 MXN\n• Profesional (portafolio/empresa) — desde $1,500 MXN\n• Con formulario de contacto — desde $2,000 MXN\n\n*El precio final depende de lo que necesites.",
-    sugs: ["¿Qué incluye?","¿Cuánto tarda?","Contactar a Kevin"]
+    sugs: ["¿Qué incluye?","¿Cuánto tarda?","Contactar a Electrodos"]
   },
   {
     keys: ["app","aplicacion","aplicación","android","movil","móvil","celular"],
@@ -667,37 +765,37 @@ const chatResponses = [
   {
     keys: ["sistema","inventario","control","administra","stock"],
     reply: "Desarrollamos sistemas de inventario a medida:\n\n💾 Sistema básico — desde $2,500 MXN\n💾 Con reportes y alertas — desde $3,500 MXN\n\nIncluye base de datos, panel de control y acceso web o escritorio.\n\n*El precio varía según las funciones.",
-    sugs: ["¿Qué tecnologías usan?","Contactar a Kevin"]
+    sugs: ["¿Qué tecnologías usan?","Contactar a Electrodos"]
   },
   {
     keys: ["tarda","tiempo","dias","días","semana","entrega","cuando","plazo"],
     reply: "Tiempos de entrega aproximados:\n\n• Página básica — 3 a 5 días\n• Página profesional — 1 a 2 semanas\n• App Android — 2 a 4 semanas\n• Sistema completo — 2 a 5 semanas\n\nDepende de los requisitos del proyecto.",
-    sugs: ["¿Cuánto cuesta?","Contactar a Kevin"]
+    sugs: ["¿Cuánto cuesta?","Contactar a Electrodos"]
   },
   {
     keys: ["incluye","funciones","caracteristicas","características","que tiene"],
     reply: "Nuestras páginas incluyen:\n\n✅ Diseño moderno y responsivo\n✅ Animaciones profesionales\n✅ Formulario de contacto\n✅ Optimización para móviles\n✅ Integración con WhatsApp\n✅ Compatible con todos los navegadores\n\nTodo adaptado a lo que necesites.",
-    sugs: ["¿Cuánto cuesta?","Contactar a Kevin"]
+    sugs: ["¿Cuánto cuesta?","Contactar a Electrodos"]
   },
   {
     keys: ["tecnologia","tecnología","lenguaje","usan","programan","stack"],
     reply: "Trabajamos con:\n\n• HTML, CSS, JavaScript\n• PHP, Node.js, Express\n• MySQL, MongoDB, MariaDB\n• Python, C++, Java\n• Android (Java/Kotlin)\n• React y frameworks modernos",
-    sugs: ["¿Cuánto cuesta?","Contactar a Kevin"]
+    sugs: ["¿Cuánto cuesta?","Contactar a Electrodos"]
   },
   {
     keys: ["contacto","contactar","comunicar","whatsapp","correo","email","kevin","hablar"],
-    reply: "Puedes contactar a Kevin directamente:\n\n📱 WhatsApp: 656 769 7333\n📧 Email: kevinraul581@gmail.com\n\nO usa el formulario de contacto en esta página. ¡Respondemos rápido!",
+    reply: "Puedes contactarnos directamente:\n\n📱 WhatsApp: 656 769 7333\n📧 Email: elecctrodos@gmail.com\n\nO usa el formulario de contacto en esta página. ¡Respondemos rápido!",
     sugs: ["¿Qué servicios ofrecen?","¿Cuánto cuesta una página?"]
   },
   {
     keys: ["ubicacion","ubicación","donde","ciudad","juarez","juárez","mexico","méxico"],
     reply: "Estamos en Ciudad Juárez, Chihuahua, México.\n\nTrabajamos de forma presencial y remota para toda la República Mexicana.",
-    sugs: ["Contactar a Kevin","¿Qué servicios ofrecen?"]
+    sugs: ["Contactar a Electrodos","¿Qué servicios ofrecen?"]
   },
   {
     keys: ["gracias","perfecto","genial","excelente","ok","okay","listo","de acuerdo"],
-    reply: "¡De nada! Estamos para ayudarte cuando quieras.\n\nSi deseas cotizar tu proyecto, no dudes en contactar a Kevin. ¡Éxito! 🚀",
-    sugs: ["Contactar a Kevin","¿Qué servicios ofrecen?"]
+    reply: "¡De nada! Estamos para ayudarte cuando quieras.\n\nSi deseas cotizar tu proyecto, no dudes en contactarnos. ¡Éxito! 🚀",
+    sugs: ["Contactar a Electrodos","¿Qué servicios ofrecen?"]
   }
 ];
 
